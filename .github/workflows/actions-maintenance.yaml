@@ -16,10 +16,6 @@ on:
     types: [opened, synchronize, reopened]
     paths:
       - ".github/**"
-  push:
-    branches: [master]
-    paths:
-      - ".github/**"
 
 permissions:
   contents: read
