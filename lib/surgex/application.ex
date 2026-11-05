@@ -5,7 +5,6 @@ defmodule Surgex.Application do
 
   use Application
   use GenServer
-  require Logger
 
   alias Surgex.Sentry
 
@@ -15,7 +14,7 @@ defmodule Surgex.Application do
   end
 
   def init(_) do
-    Sentry.init()
+    Sentry.apply_patch()
 
     {:ok, nil, :hibernate}
   end

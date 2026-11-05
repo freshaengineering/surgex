@@ -27,7 +27,10 @@ if Code.ensure_loaded?(Plug) do
 
     """
     @deprecated "Use Elixir 1.9+ runtime configuration (config/runtime.exs) instead"
-    def init do
+    def init, do: apply_patch()
+
+    @doc false
+    def apply_patch do
       if Application.get_env(:surgex, :sentry_patch_enabled, false), do: do_init()
     end
 
