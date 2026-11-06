@@ -25,7 +25,7 @@ env:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     services:
       postgres:
@@ -79,7 +79,7 @@ jobs:
     name: Permit Package Publishing
     timeout-minutes: 25
     needs: [test]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       PUBLISH: ${{ steps.version.outputs.PUBLISH }}
     steps:
@@ -118,7 +118,7 @@ jobs:
   publish:
     name: Publish Hex Package
     needs: [permit]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: needs.permit.outputs.PUBLISH == 'true' && github.event_name == 'push'
     steps:
       - name: Harden the runner
