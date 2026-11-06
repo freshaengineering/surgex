@@ -150,20 +150,19 @@ if Code.ensure_loaded?(Jabbax) do
     @spec map_parsed_options({:ok, any}, any) :: {:ok, any}
     def map_parsed_options(parser_result, mapping) do
       with {:ok, opts} <- parser_result do
-        updated_opts =
-          Enum.reduce(mapping, opts, fn {source, target}, current_opts ->
-            case Keyword.fetch(current_opts, source) do
-              {:ok, value} ->
-                current_opts
-                |> Keyword.delete(source)
-                |> Keyword.put(target, value)
+        {:ok, Enum.reduce(mapping, opts, &rename_option/2)}
+      end
+    end
 
-              :error ->
-                current_opts
-            end
-          end)
+    defp rename_option({source, target}, opts) do
+      case Keyword.fetch(opts, source) do
+        {:ok, value} ->
+          opts
+          |> Keyword.delete(source)
+          |> Keyword.put(target, value)
 
-        {:ok, updated_opts}
+        :error ->
+          opts
       end
     end
 

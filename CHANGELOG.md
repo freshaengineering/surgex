@@ -10,6 +10,10 @@
 - Removed `Surgex.Application`: Surgex no longer starts an OTP application
 - Removed optional `plug` dependency
 
+### Changed
+
+- Require Elixir 1.16 or later. CI tests Elixir 1.16 (OTP 26) to Elixir 1.20 (OTP 29)
+
 ## [6.0.1]
 
 ### Deprecated
