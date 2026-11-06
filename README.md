@@ -15,7 +15,6 @@ publishing them separately. It currently consists of:
 - `Surgex.DataPipe`: tools for moving data between PostgreSQL databases and tables
 - `Surgex.DateTime`: utilities for creating date times with timezone support
 - `Surgex.Parser`: parses, casts and catches errors in the web request input
-- `Surgex.Sentry`: extensions to the official Sentry package (deprecated)
 - `Surgex.RepoHelpers`: tools for dynamic setup of Ecto repo opts (deprecated)
 
 ## Separate packages
