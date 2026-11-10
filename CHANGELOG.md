@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [7.0.0]
+
+### Removed
+
+- Removed `Surgex.Sentry` module (no external usage found)
+- Removed `Surgex.Application`: Surgex no longer starts an OTP application
+- Removed optional `plug` dependency
+
+### Changed
+
+- Require Elixir 1.16 or later. CI tests Elixir 1.16 (OTP 26) to Elixir 1.20 (OTP 29)
+
 ## [6.0.1]
 
 ### Deprecated
@@ -348,7 +360,8 @@
 - Extended `Surgex.Sentry` to take release and environment from Mix
 - Completed `Surgex.Guide`
 
-[Unreleased]: https://github.com/surgeventures/surgex/compare/v6.0.1...HEAD
+[Unreleased]: https://github.com/surgeventures/surgex/compare/v7.0.0...HEAD
+[7.0.0]: https://github.com/surgeventures/surgex/compare/v6.0.1...v7.0.0
 [6.0.1]: https://github.com/surgeventures/surgex/compare/v6.0.0...v6.0.1
 [6.0.0]: https://github.com/surgeventures/surgex/compare/v5.1.1...v6.0.0
 [5.1.1]: https://github.com/surgeventures/surgex/compare/v5.1.0...v5.1.1

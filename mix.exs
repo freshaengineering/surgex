@@ -4,8 +4,8 @@ defmodule Surgex.Mixfile do
   def project do
     [
       app: :surgex,
-      version: "6.0.1",
-      elixir: "~> 1.15",
+      version: "7.0.0",
+      elixir: "~> 1.16",
       elixirc_paths: elixirc_paths(Mix.env()),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -37,7 +37,7 @@ defmodule Surgex.Mixfile do
   end
 
   def application do
-    [mod: {Surgex.Application, []}, extra_applications: [:logger]]
+    [extra_applications: [:logger]]
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
@@ -66,7 +66,6 @@ defmodule Surgex.Mixfile do
       {:confix, "~> 0.4"},
       {:ecto_sql, "~> 3.0"},
       {:jabbax, "~> 0.2 or ~> 1.0"},
-      {:plug, "~> 1.7"},
       {:timex, "~> 3.7"}
     ]
     |> Enum.map(&merge_dep_flags(&1, optional: true))
